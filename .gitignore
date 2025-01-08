@@ -1,20 +1,12 @@
-# Windows
-[Dd]esktop.ini
-Thumbs.db
-$RECYCLE.BIN/
-
-# macOS
+*.log
+.env
+composer.phar
+composer.lock
 .DS_Store
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-
-/.project
+Thumbs.db
+/.idea
 /.vscode
+/vendor
 /.settings
 /.buildpath
-*.log
-*.txt
-/.idea
-
+/.project
