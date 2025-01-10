@@ -1,10 +1,10 @@
 <template>
 	<div class="home-container">
 		<h1 class="home-title">
-			Saas运营管理系统
+			总平台运营管理系统
 		</h1>
 		<p class="home-des">
-			尊敬的 {{username}} 用户，欢迎使用商城管理员系统
+			尊敬的 {{username}} 用户，欢迎使用无忧家装管理员系统
 		</p>
 	</div>
 </template>

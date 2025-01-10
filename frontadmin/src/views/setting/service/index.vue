@@ -1,9 +1,4 @@
 <template>
-	<!--
-      作者 wangxw
-      时间：2021-01-14
-      描述：设置-商城设置
-  -->
 	<div class="product-add">
 		<!--form表单-->
 		<el-form ref="form" :model="form" label-width="150px">
