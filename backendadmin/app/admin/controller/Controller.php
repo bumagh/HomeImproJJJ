@@ -38,8 +38,6 @@ class Controller extends HijController
      */
     public function initialize()
     {
-        dump("hij initialize");
-        die;
         // 当前路由信息
         $this->getRouteinfo();
         // 验证登录
