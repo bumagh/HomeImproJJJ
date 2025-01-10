@@ -69,7 +69,7 @@ export default defineComponent({
 
 		});
 		const fetchData = async () => {
-			state.enterpriseName = '三勾商城后台';
+			state.enterpriseName = '无忧家装后台';
 			// const { data:{enterpriseBgImg,enterpriseName} } = await base();
 			// state.enterpriseName = enterpriseName;
 			// if(enterpriseBgImg) state.enterpriseBgImg = enterpriseBgImg;
@@ -84,10 +84,15 @@ export default defineComponent({
 	methods: {
 		async gotoLogin() {
 			this.formRef.validate(async (valid) => {
-				if(valid){
-					const res = await login(this.ruleForm);
-					await this.afterLogin(res);
-					this.$router.push('/Home')
+				if (valid) {
+					try {
+						const res = await login(this.ruleForm);
+						await this.afterLogin(res);
+						this.$router.push('/Home');
+					} catch (error) {
+						//
+					}
+
 				}
 			});
 		},
@@ -95,42 +100,42 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-	.login-bg {
-		position: fixed;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: 100%;
+.login-bg {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100%;
+}
+
+.login-container {
+	box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.1), 0 1px 0px 0 rgba(0, 0, 0, 0.04);
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	background-clip: padding-box;
+	position: fixed;
+	width: 350px;
+	left: 50%;
+	top: 50%;
+	margin-left: -175px;
+	margin-top: -175px;
+	padding: 35px 35px 15px 35px;
+	background: #fff;
+	border: 1px solid #eaeaea;
+
+	.title {
+		margin: 0px auto 40px auto;
+		text-align: center;
+		color: #505458;
+		font-size: 16px;
 	}
 
-	.login-container {
-		box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.1), 0 1px 0px 0 rgba(0, 0, 0, 0.04);
-		-webkit-border-radius: 5px;
-		border-radius: 5px;
-		-moz-border-radius: 5px;
-		background-clip: padding-box;
-		position: fixed;
-		width: 350px;
-		left: 50%;
-		top: 50%;
-		margin-left: -175px;
-		margin-top: -175px;
-		padding: 35px 35px 15px 35px;
-		background: #fff;
-		border: 1px solid #eaeaea;
-
-		.title {
-			margin: 0px auto 40px auto;
-			text-align: center;
-			color: #505458;
-			font-size: 16px;
-		}
-
-		.remember {
-			margin: 0px 0px 35px 0px;
-		}
+	.remember {
+		margin: 0px 0px 35px 0px;
 	}
+}
 </style>
